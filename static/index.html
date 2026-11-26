@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- 現在はCDNから読み込み -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css">
+    <meta charset="UTF-8">
+    <title>Local フォト</title>
+</head>
+<body>
+    <section class="header-area">
+        <section class="header-top">
+            <div id="js-restriction-selector" class="restriction-selector">GALLERY</div>
+            <div id="js-preview-cnt" class="preview-cnt"></div>
+            <select id="js-sort-type-selector" class="sort-type-selector">
+                <option value="id_ASC">ID昇順</option>
+                <option value="id_DESC">ID降順</option>
+                <option value="artist_ASC">作者名昇順</option>
+                <option value="artist_DESC">作者名降順</option>
+            </select>
+
+
+            <div class="input-wrapper">
+
+                <input id="js-search-box" class="search-box" placeholder="タグ、作者名を検索"></input>
+
+                <div id="js-search-box-clear" class="search-box-clear">
+                    <svg  class="icon-close" width="18" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"/>
+                            <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>            
+                </div>            
+
+            </div>
+            
+            
+            <button id="js-logical-selector" class="logical-selector">OR検索</button>
+            <div id="js-thumbs-selector" class="thumbs-selector">選択</div>
+            <div id="js-tags-selector" class="tags-selector">タグ一覧</div>     
+        </section>   
+
+        <section id="js-header-bottom" class="header-bottom js-header-bottom-hidden">     
+            <div id="js-header-bottom-dl" class="header-button header-bottom-dl">画像DL</div>
+        </section>
+    </section>
+
+    <section class="content-area">
+        <section id="js-tag-list-area" class="tag-list-area tag-list-area-close">
+            <section class="tag-list-header">
+
+                <div  class="tag-list-header-label">タグ一覧</div>
+
+                <div id="js-tag-list-header-close" class="tag-list-header-close">
+                    <svg  class="icon-close" width="18" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"/>
+                            <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>            
+                </div>
+
+            </section>
+
+            <section id="js-tags-list" class="tag-list"></section>           
+
+        </section>
+
+        <section class="thumbs-grid-area">
+            <section id="js-thumbs-grid" class="thumbs-grid"></section>
+            <div id="js-thumbs-end" style="height: 1px;"></div>
+        </section>
+
+           
+    </section>
+
+    <dialog id="tags-image-modal">
+
+        <section class="modal-info">
+            
+            <section class="modal-info-section">
+                <h3 class="modal-info-heading">ARTIST</h3>
+                <div id="js-modal-info-artist" class="modal-info-artist"></div>
+            </section>
+
+            <section class="modal-info-section">
+                <h3 class="modal-info-heading">TAGS</h3>
+                <div id="js-modal-info-tags" class="modal-info-tags"></div>
+            </section>
+            
+            <section class="modal-info-section" style="margin-top: auto;">
+                <h3 class="modal-info-heading">INFOMATION</h3>
+                <div id="js-modal-info-information" class="modal-info-information"></div> 
+            </section>
+
+
+
+        </section>
+        <section id="js-modal-img" class="modal-img"></section>
+
+    </dialog>
+
+    <script src="/static/script.js" type="module"></script>
+    <!-- 現在はCDNから読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.2/dist/jszip.js"></script>
+</body>
